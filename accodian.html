@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accodian</title>
+    <style>
+        *{margin: 0; padding:0;}
+        ul{list-style: none;}
+
+        .accodian{
+            width: 600px; margin: 0 auto;
+            background-color: antiquewhite;
+        }
+        .acco_group>li{
+            border-bottom: 1px solid;
+        }
+        .acco_group>li h2{
+            background-color: rgb(180, 147, 147);
+            height: 60px;
+            cursor: pointer;
+            line-height: 60px; padding-left: 30px;
+        }
+        .acco_group>li .m_txt{
+            padding: 20px;
+            display: none;
+        }
+        .acco_group>li .m_title.active{
+            background-color: brown;
+        }
+        .acco_group>li:nth-child(1) .m_txt{
+            display: block;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){          
+            $(".m_title").click(function(){
+                if($(this).hasClass("active")){
+                    $(".m_title").removeClass("active").siblings().slideUp();
+            }else{
+                    $(".m_title").removeClass("active").siblings().slideUp();
+                    $(this).addClass("active").siblings().slideDown();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="accodian">
+        <ul class="acco_group">
+            <li>
+                <h2 class="m_title active">MENU1</h2>
+                <div class="m_txt">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ducimus at veniam excepturi eligendi velit inventore, praesentium vel ad sapiente incidunt quidem minus corrupti. Quasi pariatur suscipit officia ab perspiciatis!
+                </div>
+            </li>
+            <li>
+                <h2 class="m_title">MENU2</h2>
+                <div class="m_txt">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ducimus at veniam excepturi eligendi velit inventore, praesentium vel ad sapiente incidunt quidem minus corrupti. Quasi pariatur suscipit officia ab perspiciatis!
+                </div>
+            </li>
+            <li>
+                <h2 class="m_title">MENU3</h2>
+                <div class="m_txt">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ducimus at veniam excepturi eligendi velit inventore, praesentium vel ad sapiente incidunt quidem minus corrupti. Quasi pariatur suscipit officia ab perspiciatis!
+                </div>
+            </li>
+            <li>
+                <h2 class="m_title">MENU4</h2>
+                <div class="m_txt">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ducimus at veniam excepturi eligendi velit inventore, praesentium vel ad sapiente incidunt quidem minus corrupti. Quasi pariatur suscipit officia ab perspiciatis!
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
